@@ -17,7 +17,7 @@ pipeline {
     }
     stage('Display version') {
       steps {
-        echo '0.0.2'
+        echo 'master'
       }
     }
     stage('Checkout repo and pull model output from S3') {
