@@ -32,24 +32,15 @@ pipeline {
                         ])
 
         sh '''
-          sh 'catme.txt says...'
-          cat catme.txt
+          echo 'catme.txt says...'
+          cat ${WORKSPACE}/catme.txt
           '''
       }
     }
-  }
-    post {
-        success {
-            sh 'success'
-        }
-        unstable {
-            sh 'unstable'
-        }
-        failure {
-            sh 'failure'
-        }
-        changed {
-            sh 'changed'
-        }
+    stage('Env Vars') {
+      steps {
+        sh 'printenv'
+      }
     }
+  }
 }
