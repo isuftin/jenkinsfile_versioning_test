@@ -7,7 +7,7 @@ pipeline {
   parameters {
         gitParameter name: 'BRANCH_TAG',
                      type: 'PT_BRANCH_TAG',
-                     defaultValue: 'origin/master'
+                     defaultValue: 'master'
   }
   stages {
     stage('Clean Workspace') {
