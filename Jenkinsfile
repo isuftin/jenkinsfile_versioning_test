@@ -23,7 +23,7 @@ pipeline {
     stage('Checkout repo and pull model output from S3') {
       steps {
         checkout([$class: 'GitSCM',
-                          branches: [[name: "${params.BRANCH_TAG}"]],
+                          branches: [[name: "${env.GIT_BRANCH}"]],
                           doGenerateSubmoduleConfigurations: false,
                           extensions: [],
                           gitTool: 'Default',
